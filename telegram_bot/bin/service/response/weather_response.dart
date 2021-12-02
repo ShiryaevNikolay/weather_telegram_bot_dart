@@ -1,14 +1,23 @@
 import 'package:json_annotation/json_annotation.dart';
 
+part 'weather_response.g.dart';
+
 /// Модель ответа запроса прогноза погоды
 @JsonSerializable()
 class WeatherResponse {
+  @JsonKey(name: 'weather')
   final List<WeatherEntityResponse> weather;
+  @JsonKey(name: 'main')
   final MainEntityResponse main;
+  @JsonKey(name: 'visibility')
   final int visibility;
+  @JsonKey(name: 'wind')
   final WindEntityResponse? wind;
+  @JsonKey(name: 'rain')
   final RainEntityResponse? rain;
+  @JsonKey(name: 'clouds')
   final CloudsEntityResponse? clouds;
+  @JsonKey(name: 'city')
   final String city;
 
   WeatherResponse({
@@ -28,9 +37,13 @@ class WeatherResponse {
 
 @JsonSerializable()
 class WeatherEntityResponse {
+  @JsonKey(name: 'id')
   final int id;
+  @JsonKey(name: 'main')
   final String main;
+  @JsonKey(name: 'description')
   final String description;
+  @JsonKey(name: 'icon')
   final String icon;
 
   WeatherEntityResponse({
@@ -47,19 +60,24 @@ class WeatherEntityResponse {
 
 @JsonSerializable()
 class MainEntityResponse {
+  @JsonKey(name: 'temp')
   final double temp;
-  @Json
-  final double feels_like;
-  final double temp_min;
-  final double temp_max;
+  @JsonKey(name: 'feels_like')
+  final double feelsLike;
+  @JsonKey(name: 'temp_min')
+  final double tempMin;
+  @JsonKey(name: 'temp_max')
+  final double tempMax;
+  @JsonKey(name: 'pressure')
   final int pressure;
+  @JsonKey(name: 'humidity')
   final int humidity;
 
   MainEntityResponse({
     required this.temp,
-    required this.feels_like,
-    required this.temp_min,
-    required this.temp_max,
+    required this.feelsLike,
+    required this.tempMin,
+    required this.tempMax,
     required this.pressure,
     required this.humidity,
   });
@@ -71,7 +89,9 @@ class MainEntityResponse {
 
 @JsonSerializable()
 class WindEntityResponse {
+  @JsonKey(name: 'speed')
   final int speed;
+  @JsonKey(name: 'deg')
   final int deg;
 
   WindEntityResponse({
@@ -86,6 +106,7 @@ class WindEntityResponse {
 
 @JsonSerializable()
 class RainEntityResponse {
+  @JsonKey(name: 'time')
   final int time;
 
   RainEntityResponse({required this.time});
@@ -97,6 +118,7 @@ class RainEntityResponse {
 
 @JsonSerializable()
 class CloudsEntityResponse {
+  @JsonKey(name: 'all')
   final int all;
 
   CloudsEntityResponse({required this.all});
