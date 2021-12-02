@@ -23,7 +23,7 @@ WeatherResponse _$WeatherResponseFromJson(Map<String, dynamic> json) =>
           ? null
           : CloudsEntityResponse.fromJson(
               json['clouds'] as Map<String, dynamic>),
-      city: json['city'] as String,
+      city: json['city'] as String?,
     );
 
 Map<String, dynamic> _$WeatherResponseToJson(WeatherResponse instance) =>

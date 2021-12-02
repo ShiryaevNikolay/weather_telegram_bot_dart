@@ -18,7 +18,7 @@ class WeatherResponse {
   @JsonKey(name: 'clouds')
   final CloudsEntityResponse? clouds;
   @JsonKey(name: 'city')
-  final String city;
+  final String? city;
 
   WeatherResponse({
     required this.weather,

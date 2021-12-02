@@ -6,7 +6,7 @@ class Weather {
   final WindEntity? wind;
   final RainEntity? rain;
   final CloudsEntity? clouds;
-  final String city;
+  final String? city;
 
   Weather({
     required this.weather,
@@ -35,17 +35,17 @@ class WeatherEntity {
 
 class MainEntity {
   final double temp;
-  final double feels_like;
-  final double temp_min;
-  final double temp_max;
+  final double feelsLike;
+  final double tempMin;
+  final double tempMax;
   final int pressure;
   final int humidity;
 
   MainEntity({
     required this.temp,
-    required this.feels_like,
-    required this.temp_min,
-    required this.temp_max,
+    required this.feelsLike,
+    required this.tempMin,
+    required this.tempMax,
     required this.pressure,
     required this.humidity,
   });
